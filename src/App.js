@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import LoginSignup from './components/LoginSignup';
+import Dashboard from './components/Dashboard';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // Lưu user khi đăng nhập (id, username)
+    const [user, setUser] = useState(null);
+
+    // Xử lý đăng nhập thành công -> lưu user
+    const handleLoginSuccess = (userData) => {
+        setUser(userData);
+    };
+
+    // Xử lý đăng xuất
+    const handleLogout = () => {
+        setUser(null);
+    };
+
+    return (
+        <div className="app-container">
+            {user ? (
+                <Dashboard user={user} onLogout={handleLogout} />
+            ) : (
+                <LoginSignup onLoginSuccess={handleLoginSuccess} />
+            )}
+        </div>
+    );
 }
 
 export default App;

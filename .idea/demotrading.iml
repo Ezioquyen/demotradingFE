@@ -9,5 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="stomp.js" level="application" />
+    <orderEntry type="library" name="sockjs-client" level="application" />
   </component>
 </module>

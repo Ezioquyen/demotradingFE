@@ -1,0 +1,160 @@
+/* Tổng thể */
+.app-container {
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* Header */
+.header-bar {
+    height: 50px;
+    background-color: #1f1f1f;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.header-right button {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.dashboard-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-content {
+    flex: 1;
+    display: flex;
+}
+
+/* Chart area thay bằng futures list + user tabs */
+.chart-area {
+    flex: 2;
+    background: #f0f0f0;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+/* Order side */
+.order-side {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+/* Box chung */
+.order-box, .market-order-box, .other-box {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/* Order input */
+.order-input {
+    margin: 5px 0;
+}
+
+.buy-btn {
+    background-color: #4caf50;
+    color: #fff;
+    margin-right: 5px;
+    border: none;
+    padding: 6px 12px;
+}
+
+.sell-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+}
+
+.futures-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+.futures-list table th,
+.futures-list table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+/* User tabs */
+.user-tabs .tabs {
+    margin-top: 10px;
+}
+.user-tabs .tabs button {
+    margin-right: 5px;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+}
+.user-tabs .tabs button.active {
+    background-color: #4caf50;
+    color: #fff;
+}
+.user-tabs .tab-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.user-tabs .tab-content th,
+.user-tabs .tab-content td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+/* Login page */
+.login-page {
+    margin: 50px auto;
+    width: 300px;
+    text-align: center;
+}
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.login-page label {
+    text-align: left;
+    margin-bottom: 5px;
+}
+.login-page input {
+    margin-bottom: 10px;
+    padding: 6px;
+}
+.login-page button {
+    padding: 6px 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Wallet info */
+.wallet-info {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
