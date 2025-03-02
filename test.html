@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Test Client</title>
+</head>
+<body>
+<h2>WebSocket Test Client</h2>
+<button onclick="connect()">Connect</button>
+<button onclick="sendMessage()">Send Message</button>
+<div id="messages" style="margin-top:20px;"></div>
+
+<script>
+    let ws;
+
+    function connect() {
+        // Create a new WebSocket connection to the specified endpoint.
+        ws = new WebSocket("ws://localhost:8080/ws");
+
+        // Called when connection is successfully opened.
+        ws.onopen = function() {
+            console.log("Connected to WebSocket server.");
+            document.getElementById("messages").innerHTML += "<p>Connected to server.</p>";
+        };
+
+        // Called when a message is received from the server.
+        ws.onmessage = function(event) {
+            console.log("Received:", event.data);
+            document.getElementById("messages").innerHTML += `<p>Received: ${event.data}</p>`;
+        };
+
+        // Called if there is an error with the WebSocket connection.
+        ws.onerror = function(error) {
+            console.error("WebSocket error:", error);
+            document.getElementById("messages").innerHTML += `<p>Error: ${error.message}</p>`;
+        };
+
+        // Called when the connection is closed.
+        ws.onclose = function(event) {
+            console.log("Connection closed:", event);
+            document.getElementById("messages").innerHTML += "<p>Connection closed.</p>";
+        };
+    }
+
+    function sendMessage() {
+        if (ws && ws.readyState === WebSocket.OPEN) {
+            const msg = "Hello WebSocket!";
+            ws.send(msg);
+            console.log("Sent:", msg);
+            document.getElementById("messages").innerHTML += `<p>Sent: ${msg}</p>`;
+        } else {
+            console.log("WebSocket is not connected.");
+            document.getElementById("messages").innerHTML += "<p>WebSocket is not connected.</p>";
+        }
+    }
+</script>
+</body>
+</html>
