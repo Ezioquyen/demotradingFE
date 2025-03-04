@@ -1,0 +1,66 @@
+/* Mobile Dashboard Styles */
+.mobile-dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.toggle-futures-btn {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.mobile-futures-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.mobile-search {
+    margin-bottom: 10px;
+}
+
+.mobile-search input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.mobile-main-area {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex: 1;
+}
+
+.left-pane, .right-pane {
+    flex: 1;
+}
+
+.right-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.top-right, .bottom-right {
+    flex: 1;
+}
+
+.mobile-bottom {
+    margin-top: 10px;
+}
+
+/* Đảm bảo các component con có kích thước hợp lý trên mobile */

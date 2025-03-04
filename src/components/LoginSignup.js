@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-function LoginSignup({ onLoginSuccess }) {
+function LoginSignup({onLoginSuccess}) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isSignup, setIsSignup] = useState(false);
@@ -15,16 +15,16 @@ function LoginSignup({ onLoginSuccess }) {
                 username: username
             };
             // Thông thường:
-            // const res = await fetch('http://localhost:8080/api/auth/login', {
-            //   method: 'POST',
-            //   headers: { 'Content-Type': 'application/json' },
-            //   body: JSON.stringify({ username, password })
-            // });
-            // const data = await res.json();
+            const res = await fetch(process.env.REACT_APP_API_BASE_URL + '/auth/login', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({username, password})
+            });
+            const data = await res.json();
 
-            // if (data.token) {
-            //   onLoginSuccess({ id: data.id, username: data.username });
-            // }
+            if (data.token) {
+                onLoginSuccess({id: data.id, username: data.username});
+            }
 
             onLoginSuccess(response);
         } catch (error) {

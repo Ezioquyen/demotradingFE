@@ -36,6 +36,7 @@
     cursor: pointer;
 }
 
+/* Dashboard Layout */
 .dashboard-container {
     flex: 1;
     display: flex;
@@ -45,9 +46,12 @@
 .dashboard-content {
     flex: 1;
     display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
 }
 
-/* Chart area thay bằng futures list + user tabs */
+/* Chart area (FuturesList + UserTabs) */
 .chart-area {
     flex: 2;
     background: #f0f0f0;
@@ -66,10 +70,12 @@
 }
 
 /* Box chung */
-.order-box, .market-order-box, .other-box {
+.order-box, .market-order-box, .wallet-info, .other-box {
     background: #fff;
     padding: 10px;
     margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Order input */
@@ -83,6 +89,7 @@
     margin-right: 5px;
     border: none;
     padding: 6px 12px;
+    cursor: pointer;
 }
 
 .sell-btn {
@@ -90,6 +97,7 @@
     color: #fff;
     border: none;
     padding: 6px 12px;
+    cursor: pointer;
 }
 
 .futures-list table {
@@ -97,6 +105,7 @@
     border-collapse: collapse;
     margin-bottom: 10px;
 }
+
 .futures-list table th,
 .futures-list table td {
     border: 1px solid #ccc;
@@ -106,55 +115,99 @@
 /* User tabs */
 .user-tabs .tabs {
     margin-top: 10px;
+    display: flex;
+    gap: 5px;
 }
+
 .user-tabs .tabs button {
-    margin-right: 5px;
     padding: 6px 12px;
     border: none;
     cursor: pointer;
+    background-color: #ddd;
+    border-radius: 4px;
 }
+
 .user-tabs .tabs button.active {
     background-color: #4caf50;
     color: #fff;
 }
+
 .user-tabs .tab-content table {
     width: 100%;
     border-collapse: collapse;
 }
+
 .user-tabs .tab-content th,
 .user-tabs .tab-content td {
     border: 1px solid #ccc;
     padding: 8px;
 }
 
-/* Login page */
-.login-page {
-    margin: 50px auto;
-    width: 300px;
-    text-align: center;
+/* Responsive Design cho điện thoại */
+@media (max-width: 768px) {
+    .dashboard-content {
+        flex-direction: column;
+    }
+
+    .chart-area, .order-side {
+        flex: 1;
+    }
+
+    .header-bar {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    .header-right {
+        margin-top: 10px;
+    }
 }
-.login-page form {
+.user-tabs .tabs {
     display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-}
-.login-page label {
-    text-align: left;
-    margin-bottom: 5px;
-}
-.login-page input {
+    gap: 10px;
     margin-bottom: 10px;
-    padding: 6px;
-}
-.login-page button {
-    padding: 6px 12px;
-    margin-bottom: 10px;
-    cursor: pointer;
 }
 
-/* Wallet info */
-.wallet-info {
-    background: #fff;
+.user-tabs .tabs button {
+    flex: 1;
     padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ddd;
+}
+
+.user-tabs .tabs button.active {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+/* Desktop table styles */
+.user-tabs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-tabs th,
+.user-tabs td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Mobile card styles */
+.position-card, .order-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
     margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.card-actions {
+    margin-top: 8px;
+    display: flex;
+    gap: 5px;
 }
